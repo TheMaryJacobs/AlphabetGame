@@ -42,32 +42,32 @@
       
     </div>
     <script>
-        function handleClick(){
-            const inputEl = document.getElementById("user-letter");
-            // console.log(inputEl);
-
-            const userInput = inputEl.value;
-            // console.log(userInput);
-
-            const winnerEl = document.getElementById("winner");
-            // console.log(winnerEl);
-
+        function startGame (){
+            
             const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
             const randomIndex = Math.floor(Math.random()* letters.length);
-            console.log(randomIndex)
-            // console.log(letters.length)
-            // console.log(letters[0]);
+            console.log(randomIndex);
+            const letterToGuess = letters[randomIndex];
+            console.log("letterToGuess", letterToGuess);
+        
 
-            if(userInput === letters[randomIndex]){
+        function handleClick(){
+            const inputEl = document.getElementById("user-letter");
+
+            const userInput = inputEl.value;
+        
+            const winnerEl = document.getElementById("winner");
+
+            if(userInput === letterToGuess){
             winnerEl.innerHTML = "Winner";
-                // console.log("WINNER")
             } else{
                 winnerEl.innerHTML = "Loser";
-                // console.log("LOSER")
             }
          }
+         window.handleClick = handleClick;
+        }
+        startGame();
     
-
     </script>
 
 
