@@ -60,7 +60,14 @@
 
             if(userInput === letterToGuess){
             winnerEl.innerHTML = "Winner";
-            } else{
+            } else {
+                // EASY WAY
+                if(guesses.includes(userInput))
+                {return alert ("You already guessed that one!")}
+                        // THE HARD WAY 
+                        // if(guesses.indexOf(userInput) > -1){
+                        //     return alert("You already guessed that one!")
+                
                 guesses.push(userInput);
                 console.log(guesses);
                 // looping mechanism
@@ -68,7 +75,7 @@
                     const guess = guesses[i];
                     console.log(guess);
                 }
-
+    
                 winnerEl.innerHTML = "Loser";
                
             }
