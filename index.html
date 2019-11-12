@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Alphabet Game</title>
     <!-- Bootstrap Styling -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -12,7 +12,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <br>
                 <h1 class="text-center">Guess A Letter!</h1>
+                <br>
                 <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroup-sizing-lg">Enter Any Letter, A-Z</span>
@@ -30,28 +32,38 @@
         </div>
         <div class="row mt-5">
             <div class="col-12">
-            <div id="winner" class="jumbotron jumbotron-fluid bg-warning">
+                <div class="jumbotron jumbotron-fluid bg-warning">
                     <div class="container">
-                      <h1 class="display-4 text-center">Great Job, You Win!</h1>
+                      <h1  class="display-4 text-center" id="winner">Alphabet Game</h1>
                     </div>
-                  </div>
-                  </div>
+                </div>
+            </div>
         </div>
       
     </div>
     <script>
         function handleClick(){
             const inputEl = document.getElementById("user-letter");
-            console.log(inputEl);
+            // console.log(inputEl);
 
             const userInput = inputEl.value;
-            console.log(userInput);
+            // console.log(userInput);
 
-            if(userInput === "J"){
-            document.getElementById("winner")
-                console.log("WINNER")
+            const winnerEl = document.getElementById("winner");
+            // console.log(winnerEl);
+
+            const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+            const randomIndex = Math.floor(Math.random()* letters.length);
+            console.log(randomIndex)
+            // console.log(letters.length)
+            // console.log(letters[0]);
+
+            if(userInput === letters[randomIndex]){
+            winnerEl.innerHTML = "Winner";
+                // console.log("WINNER")
             } else{
-                console.log("LOSER")
+                winnerEl.innerHTML = "Loser";
+                // console.log("LOSER")
             }
          }
     
