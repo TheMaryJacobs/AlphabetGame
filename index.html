@@ -49,7 +49,7 @@
             console.log(randomIndex);
             const letterToGuess = letters[randomIndex];
             console.log("letterToGuess", letterToGuess);
-        
+        const guesses = [];
 
         function handleClick(){
             const inputEl = document.getElementById("user-letter");
@@ -61,7 +61,16 @@
             if(userInput === letterToGuess){
             winnerEl.innerHTML = "Winner";
             } else{
+                guesses.push(userInput);
+                console.log(guesses);
+                // looping mechanism
+                for(let i = 0; i < guesses.length; i++){
+                    const guess = guesses[i];
+                    console.log(guess);
+                }
+
                 winnerEl.innerHTML = "Loser";
+               
             }
          }
          window.handleClick = handleClick;
